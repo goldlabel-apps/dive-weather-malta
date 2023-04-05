@@ -15,9 +15,7 @@ import Humidity from "./components/Humidity"
 import Swell from "./components/Swell"
 
 export function DiveWeatherMalta() {
-
   console.log("@DWM", pJSON.version)
-  // const {hosts, host, children} = props
   return (<>
       <Provider store={dwmStore}>
         <Setup>
@@ -46,4 +44,3 @@ export function DiveWeatherMalta() {
     </>
   )
 }
-

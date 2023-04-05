@@ -4,9 +4,9 @@ export type ReduxShape = {
 }
 
 export type ThemeShape = {
-    primary?: string
-    secondary?: string
-    defaultDark?: boolean
+    mode?: string
+    primary?: string | undefined
+    secondary?: string | undefined
 }
 
 export type ConfigShape = {

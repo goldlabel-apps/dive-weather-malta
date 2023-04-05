@@ -33,24 +33,27 @@ export function Setup(props: any) {
   const dispatch = useDWMDispatch()
   const dwm = useDWMSelect(selectDWM)
   const {children} = props;
-  const theme: ThemeShape = {
-    defaultDark: false,
-    pColor: "#2DCB2C",
-    sColor: "#39F738",
-  }
 
-  if(config){
-    if (config.theme){
-      theme.pColor = config.theme.primary
-      theme.sColor = config.theme.secondary
-      if(config.theme.defaultDark) theme.mode = "dark"
-    }
-  }
+  let mode: PaletteMode = "light";
+  
+  // let theme: ThemeShape = {
+  //   mode: "light",
+  //   primary: "#2DCB2C",
+  //   secondary: "#39F738",
+  // }
+  
+  // if(config){
+  //   if (config.theme){
+  //     theme.primary = config.theme.primary
+  //     theme.secondary = config.theme.secondary
+  //     if (config.theme.defaultDark) theme.mode = "dark"
+  //   }
+  // }
   
   const t = React.useMemo(
-    () =>
-      createTheme(makeTheme(theme.mode, theme.pColor, theme.sColor)),
-    [mode, theme],
+    () => 
+      createTheme(makeTheme(mode, "#2DCB2C", "#39F738")),
+    [mode],
   );
 
   React.useEffect(() => {
