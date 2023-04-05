@@ -1,12 +1,23 @@
+import {
+    PaletteMode,
+  } from "@mui/material";
+
+
+export type HourShape = {
+    wind?: string
+}
+
 export type ReduxShape = {
     started: boolean
-    colorMode: string
+    forecast?: any
+    loading?: boolean
+    theme: ThemeShape
 }
 
 export type ThemeShape = {
-    mode?: string
-    primary?: string | undefined
-    secondary?: string | undefined
+    mode: PaletteMode
+    primary: string | undefined
+    secondary: string | undefined
 }
 
 export type ConfigShape = {
