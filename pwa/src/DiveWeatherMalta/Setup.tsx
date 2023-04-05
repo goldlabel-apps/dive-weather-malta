@@ -59,7 +59,6 @@ export function Setup(props: any) {
       <CssBaseline />
       <Box sx={{position: "relative" }}>
         {children}
-        <pre>debug {JSON.stringify(dwm, null, 2)}</pre>
       </Box>
     </ThemeProvider>
   )

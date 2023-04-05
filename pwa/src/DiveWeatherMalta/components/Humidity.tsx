@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import {Icon} from "../../@listingslab";
 
-export default function Wind(props: any) {
+export default function Humidity(props: any) {
     // const {data} = props
     const onAction = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -16,10 +16,10 @@ export default function Wind(props: any) {
         <Card sx={{}}>
             <CardHeader 
                 title={<Typography variant="body1">
-                        Wind
+                        Humidity
                         </Typography>}
                 subheader={<Typography variant="body2">
-                        Direction, Speed, Gust
+                        %
                         </Typography>}
                 action={<IconButton
                             color="primary"
