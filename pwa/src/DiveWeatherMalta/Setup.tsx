@@ -1,4 +1,5 @@
 import React from "react";
+import {ThemeShape} from "./types"
 import {
   PaletteMode,
   ThemeProvider,
@@ -32,21 +33,24 @@ export function Setup(props: any) {
   const dispatch = useDWMDispatch()
   const dwm = useDWMSelect(selectDWM)
   const {children} = props;
-  let mode: any = "light";
-  let pColor:any = "#2DCB2C";
-  let sColor:any = "#39F738";
+  const theme: ThemeShape = {
+    defaultDark: false,
+    pColor: "#2DCB2C",
+    sColor: "#39F738",
+  }
+
   if(config){
     if (config.theme){
-      pColor = config.theme.primary
-      sColor = config.theme.secondary
-      if(config.theme.defaultDark) mode = "dark"
+      theme.pColor = config.theme.primary
+      theme.sColor = config.theme.secondary
+      if(config.theme.defaultDark) theme.mode = "dark"
     }
   }
   
   const t = React.useMemo(
     () =>
-      createTheme(makeTheme(mode, pColor, sColor)),
-    [mode, pColor, sColor],
+      createTheme(makeTheme(theme.mode, theme.pColor, theme.sColor)),
+    [mode, theme],
   );
 
   React.useEffect(() => {
