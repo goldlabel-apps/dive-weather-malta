@@ -17,4 +17,4 @@
 
 - Open Source brief &amp; project management
 
-![Sticky Notes](/docs/media/png/Sticky%20Notes.png.png "Sticky Notes")
+![Sticky Notes](./docs/media/png/Sticky%20Notes.png "Sticky Notes")
