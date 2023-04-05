@@ -1,27 +1,20 @@
 import React from 'react'
-import {DWMShape} from "./DiveWeatherMalta/types"
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 // import App from './App'
 // import and use your own app instead
 import {DiveWeatherMalta} from "./DiveWeatherMalta"
-
 import reportWebVitals from './reportWebVitals'
 import './index.css'
 
 const container = document.getElementById('root')!
 const root = createRoot(container)
 
-const data: DWMShape = {
-  uid: "dasDasdd",
-  data: "12csasd3",
-}
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <DiveWeatherMalta data={data}/>
+      <DiveWeatherMalta />
     </Provider>
   </React.StrictMode>
 )

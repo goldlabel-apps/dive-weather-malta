@@ -1,4 +1,4 @@
-import DiveWeatherMalta from "./DiveWeatherMalta";
+import {DiveWeatherMalta} from "./DiveWeatherMalta";
 
 export {
     DiveWeatherMalta,

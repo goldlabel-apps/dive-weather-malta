@@ -1,29 +1,21 @@
-import React from "react"
-import {DWMShape} from "./types"
-import {
-    IconButton,
-    Typography,
-} from "@mui/material";
-import {Icon} from "../@listingslab";
+import pJSON from "../../package.json";
+import React from "react";
+import { Provider } from "react-redux";
+import { dwmStore } from "./redux/dwmStore";
+import { Setup } from "./Setup";
+import Wind from "./components/Wind";
 
-export default function DiveWeatherMalta(props: DWMShape) {
-    const {data} = props
-    console.log("data", data)
-    
-    const onToggle = (e: React.MouseEvent) => {
-        e.preventDefault();
-    };
-    return <>
-        <Typography variant="h2">
-            Dive Weather Malta
-        </Typography>
-        <IconButton
-            aria-label="Toggle Color Mode"
-            onClick={onToggle}>
-            <Icon 
-                color="primary"
-                icon={"home"}
-            />
-        </IconButton>
-    </>;
+export function DiveWeatherMalta() {
+
+  console.log("@", pJSON.version);
+  // const {hosts, host, children} = props;
+  return (<>
+      <Provider store={dwmStore}>
+        <Setup>
+          <Wind />
+        </Setup>
+      </Provider>
+    </>
+  )
 };
+
