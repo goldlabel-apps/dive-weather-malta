@@ -17,4 +17,4 @@
 
 - Open Source brief &amp; project management
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](docs/media/png/Sticky%20Notes.png.png "Logo Title Text 1")
