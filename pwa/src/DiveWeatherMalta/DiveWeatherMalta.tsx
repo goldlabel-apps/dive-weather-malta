@@ -1,29 +1,49 @@
+import pJSON from "../../package.json"
 import React from "react"
-import {DWMShape} from "./types"
 import {
-    IconButton,
-    Typography,
+  Grid,
 } from "@mui/material";
-import {Icon} from "../@listingslab";
 
-export default function DiveWeatherMalta(props: DWMShape) {
-    const {data} = props
-    console.log("data", data)
-    
-    const onToggle = (e: React.MouseEvent) => {
-        e.preventDefault();
-    };
-    return <>
-        <Typography variant="h2">
-            Dive Weather Malta
-        </Typography>
-        <IconButton
-            aria-label="Toggle Color Mode"
-            onClick={onToggle}>
-            <Icon 
-                color="primary"
-                icon={"home"}
-            />
-        </IconButton>
-    </>;
-};
+import { Provider } from "react-redux"
+import { dwmStore } from "./redux/dwmStore"
+import { Setup } from "./Setup"
+import Wind from "./components/Wind"
+import Temperature from "./components/Temperature"
+import Visibility from "./components/Visibility"
+import Rain from "./components/Rain"
+import Humidity from "./components/Humidity"
+import Swell from "./components/Swell"
+
+export function DiveWeatherMalta() {
+
+  console.log("@DWM", pJSON.version)
+  // const {hosts, host, children} = props
+  return (<>
+      <Provider store={dwmStore}>
+        <Setup>
+          <Grid container spacing={1}>
+            <Grid item xs={12} md={4}>
+              <Wind />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Temperature />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Visibility />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Rain />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Humidity />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Swell />
+            </Grid>
+          </Grid>
+        </Setup>
+      </Provider>
+    </>
+  )
+}
+

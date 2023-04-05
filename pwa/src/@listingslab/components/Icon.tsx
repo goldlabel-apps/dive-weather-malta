@@ -108,7 +108,7 @@ import AuthIcon from "@mui/icons-material/Security";
 import SendIcon from "@mui/icons-material/Send";
 import YouIcon from "@mui/icons-material/AdminPanelSettings";
 import HostIcon from "@mui/icons-material/AppShortcut";
-import AppsIcon from "@mui/icons-material/AppShortcut";
+// import AppsIcon from "@mui/icons-material/AppShortcut";
 
 export default function Icon(props: any) {
 
@@ -450,10 +450,6 @@ export default function Icon(props: any) {
       iconFragment = <RouterIcon color={color} />
       break
 
-    case "form":
-      iconFragment = <RouterIcon color={color} />
-      break
-
     case "new":
       iconFragment = <NewIcon color={color} />
       break
@@ -527,10 +523,6 @@ export default function Icon(props: any) {
       iconFragment = <CodeIcon color={color} />
       break
       
-      case "redux":
-        iconFragment = <CodeIcon color={color} />
-        break
-
       case "coder":
       iconFragment = <CoderIcon color={color} />
       break
@@ -588,12 +580,11 @@ export default function Icon(props: any) {
     case "doc":
       iconFragment = <DocIcon color={color} />
       break
+      
     case "menu":
       iconFragment = <MenuIcon color={color} />
       break
-    case "auth":
-      iconFragment = <AuthIcon color={color} />
-      break
+
     case "walkthrough":
       iconFragment = <WalkthroughIcon color={color} />
       break
