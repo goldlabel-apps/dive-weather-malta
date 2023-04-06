@@ -67,9 +67,10 @@ export default function Weather(props: any) {
                 />
                 <CardContent>
                     <Grid container spacing={1}>
-                        <Grid item xs={12}>
+                        {forecast ? <Grid item xs={12}>
                             <Mapbox />
-                        </Grid>
+                        </Grid> : null }
+                        
                         <Grid item xs={12} md={4}><Wind /></Grid>
                         <Grid item xs={12} md={4}><Temperature /></Grid>
                         <Grid item xs={12} md={4}><Visibility /></Grid>
