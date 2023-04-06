@@ -18,9 +18,14 @@ import {
 export default function Data(props: any) {
     const dwm = useDWMSelect(selectDWM)
     const {forecast, loading} = dwm
-    let meta:any = null
+    // let meta:any = null
+    let lat:number | null = null
+    let lng:number | null = null
+    
     if(forecast){
-        meta = forecast.data.meta        
+        // meta = forecast.data.meta  
+        lat = forecast.data.meta.lat
+        lng = forecast.data.meta.lng
     }
     return <>
         <Card sx={{}}>
@@ -33,15 +38,15 @@ export default function Data(props: any) {
                 action={<></>}
             />
             <CardContent>
-                <pre>meta {JSON.stringify(meta, null, 2)}</pre>
+                <pre>lat {JSON.stringify(lat, null, 2)}</pre>
+                <pre>lng {JSON.stringify(lng, null, 2)}</pre>
             </CardContent>
             <CardActions>
                 <Button variant="contained">
                     <Icon icon="code" />
                     <span style={{marginLeft:8, marginRight:8}}>
-                        Data
+                        Call To Action
                     </span>
-                    
                 </Button>
             </CardActions>
         </Card>
