@@ -3,8 +3,8 @@
   "name": "Dive Weather Forecast Malta",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#489FD8",
-  "background_color": "#489FD8",
+  "theme_color": "#367498",
+  "background_color": "#265874",
   "icons": [
     {
       "src": "favicon.ico",
