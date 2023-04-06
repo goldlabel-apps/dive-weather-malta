@@ -7,7 +7,13 @@ import {
 
 const initialState: ReduxShape = {
   started: false,
-  colorMode: "light",
+  theme: {
+    mode: "dark",
+    primary: "#95D3DE",
+    secondary: "#F6E281",
+  },
+  loading: false,
+  forecast: null,
 }
 
 export const dwmSlice = createSlice({

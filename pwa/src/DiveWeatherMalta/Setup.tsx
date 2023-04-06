@@ -1,4 +1,6 @@
 import React from "react";
+// import {config} from "./config"
+// import {ThemeShape} from "./types"
 import {
   PaletteMode,
   ThemeProvider,
@@ -6,7 +8,6 @@ import {
   createTheme,
   Box,
 } from "@mui/material";
-import {config} from "./config"
 import {useDWMSelect} from "./hooks/useDWMSelect"
 import {useDWMDispatch} from "./hooks/useDWMDispatch"
 import {selectDWM} from "./redux/dwmSlice"
@@ -14,39 +15,31 @@ import {start} from "./redux/actions/start"
 
 export const makeTheme = (
   mode: PaletteMode, 
-  primaryColor: string, 
-  secondaryColor: string,
+  primary: string, 
+  secondary: string,
 ) => ({    
   palette: {
       mode,
       primary: {
-          main: mode === "light" ? primaryColor : secondaryColor,
+          main: mode === "light" ? primary : secondary,
       },
       secondary: {
-          main: mode === "light" ? secondaryColor : primaryColor,
+          main: mode === "light" ? secondary : primary,
       },
   },
 });
 
 export function Setup(props: any) {
+  const {children} = props
   const dispatch = useDWMDispatch()
   const dwm = useDWMSelect(selectDWM)
-  const {children} = props;
-  let mode: any = "light";
-  let pColor:any = "#2DCB2C";
-  let sColor:any = "#39F738";
-  if(config){
-    if (config.theme){
-      pColor = config.theme.primary
-      sColor = config.theme.secondary
-      if(config.theme.defaultDark) mode = "dark"
-    }
-  }
-  
+  const {theme} = dwm
+  const {mode, primary, secondary} = theme
   const t = React.useMemo(
-    () =>
-      createTheme(makeTheme(mode, pColor, sColor)),
-    [mode, pColor, sColor],
+    () => 
+      // @ts-ignore
+      createTheme(makeTheme(mode, primary, secondary)),
+    [mode, primary, secondary],
   );
 
   React.useEffect(() => {
