@@ -25,6 +25,8 @@ import Rain from "./components/WeatherDisplay/Rain"
 import Humidity from "./components/WeatherDisplay/Humidity"
 import Swell from "./components/WeatherDisplay/Swell"
 
+import Mapbox from "./components/Mapbox"
+
 export default function Weather(props: any) {
     const dwm = useDWMSelect(selectDWM)
     const {forecast, loading, description} = dwm
@@ -64,10 +66,10 @@ export default function Weather(props: any) {
                     </>}
                 />
                 <CardContent>
-                    <pre>lat {JSON.stringify(lat, null, 2)}</pre>
-                    <pre>lng {JSON.stringify(lng, null, 2)}</pre>
-
                     <Grid container spacing={1}>
+                        <Grid item xs={12}>
+                            <Mapbox />
+                        </Grid>
                         <Grid item xs={12} md={4}><Wind /></Grid>
                         <Grid item xs={12} md={4}><Temperature /></Grid>
                         <Grid item xs={12} md={4}><Visibility /></Grid>
@@ -95,3 +97,8 @@ export default function Weather(props: any) {
         </Container>
     </>
 }
+
+/*
+<pre>lat {JSON.stringify(lat, null, 2)}</pre>
+<pre>lng {JSON.stringify(lng, null, 2)}</pre>
+*/

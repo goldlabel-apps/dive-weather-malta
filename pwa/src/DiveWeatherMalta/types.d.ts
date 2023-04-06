@@ -22,6 +22,7 @@ export type ReduxShape = {
     loading?: boolean
     theme: ThemeShape
     description: string
+    blink?: boolean
 }
 
 export type ThemeShape = {
