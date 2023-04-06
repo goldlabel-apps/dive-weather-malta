@@ -9,9 +9,10 @@ const initialState: ReduxShape = {
   started: false,
   theme: {
     mode: "light",
-    primary: "#95D3DE",
-    secondary: "#F6E281",
+    primary: "#265874",
+    secondary: "#489FD8",
   },
+  description: "An easy to use app displaying a 5 Day Marine weather forecast for Malta",
   loading: false,
   forecast: null,
 }
