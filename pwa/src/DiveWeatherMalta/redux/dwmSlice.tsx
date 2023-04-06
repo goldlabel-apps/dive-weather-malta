@@ -8,7 +8,7 @@ import {
 const initialState: ReduxShape = {
   started: false,
   theme: {
-    mode: "dark",
+    mode: "light",
     primary: "#95D3DE",
     secondary: "#F6E281",
   },

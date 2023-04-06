@@ -1,6 +1,10 @@
 {
   "short_name": "Dive Malta",
-  "name": "Create React App Sample",
+  "name": "Dive Weather Forecast Malta",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#489FD8",
+  "background_color": "#489FD8",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,11 +14,8 @@
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
