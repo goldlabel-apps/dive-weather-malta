@@ -18,10 +18,13 @@ import {
 export default function Data(props: any) {
     const dwm = useDWMSelect(selectDWM)
     const {forecast, loading} = dwm
-
+    let meta:any = null
+    if(forecast){
+        meta = forecast.data.meta        
+    }
     return <>
         <Card sx={{}}>
-            {loading ? <LinearProgress /> : <Box sx={{height:6}} /> }
+            {loading ? <LinearProgress /> : <Box sx={{height:4}} /> }
             <CardHeader 
                 title={<Typography variant="button">
                             Data
@@ -30,8 +33,7 @@ export default function Data(props: any) {
                 action={<></>}
             />
             <CardContent>
-                <pre>forecast {JSON.stringify(forecast, null, 2)}</pre>
-                <pre>loading {JSON.stringify(loading, null, 2)}</pre>
+                <pre>meta {JSON.stringify(meta, null, 2)}</pre>
             </CardContent>
             <CardActions>
                 <Button variant="contained">
