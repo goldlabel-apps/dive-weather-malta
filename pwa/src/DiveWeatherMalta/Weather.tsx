@@ -9,7 +9,7 @@ import {
     CardContent,
 } from "@mui/material"
 import {Font} from "./components/Font"
-import {Icon} from "../@listingslab"
+// import {Icon} from "../@listingslab"
 import {
     useDWMSelect,
     selectDWM,
@@ -26,10 +26,9 @@ import Mapbox from "./components/Mapbox"
 
 export default function Weather(props: any) {
     const dwm = useDWMSelect(selectDWM)
-    const {loading, description} = dwm
+    const {description} = dwm
     return <>
-        <Container maxWidth="lg" sx={{mt:1}}>
-            <>
+            <Container maxWidth="lg" sx={{mt:1}}>
                 <CardHeader 
                     avatar={<IconButton
                                 onClick={(e: React.MouseEvent) => {
@@ -49,9 +48,9 @@ export default function Weather(props: any) {
                 />
                 <CardContent>
                     <Grid container>
+                        
                         <Grid item xs={12} md={8}>
                             <Grid container>
-                                <Grid item xs={12}><Mapbox /></Grid>
                                 <Grid item xs={12} md={4}><Wind /></Grid>
                                 <Grid item xs={12} md={4}><Temperature /></Grid>
                                 <Grid item xs={12} md={4}><Visibility /></Grid>
@@ -63,9 +62,11 @@ export default function Weather(props: any) {
                         <Grid item xs={12} md={4}>
                             <Other />
                         </Grid>
+                        <Grid item xs={12}>
+                            <Mapbox />
+                        </Grid>
                     </Grid>
                 </CardContent>
-            </>
         </Container>
     </>
 }
