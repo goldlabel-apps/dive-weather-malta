@@ -1,7 +1,7 @@
 import * as React from "react"
 import mapboxgl from "mapbox-gl"
 import {
-  Card,
+  Box,
 } from "@mui/material"
 import "mapbox-gl/dist/mapbox-gl.css"
 import {useDWMSelect} from "../hooks/useDWMSelect"
@@ -17,7 +17,7 @@ export default function Mapbox() {
   const dwm = useDWMSelect(selectDWM)
   const id = "mapbox"
   const map = React.useRef(null)
-  const zoom = 9.75
+  const zoom = 9.5
   const container = React.useRef(null)
 
   const onMapLoad = React.useCallback(() => {
@@ -36,7 +36,7 @@ export default function Mapbox() {
       map.current = new mapboxgl.Map({
         // @ts-ignore
         container: container.current,
-        style: "mapbox://styles/listingslab/cleor6ws4003u01mrhg40x8n7",
+        style: "mapbox://styles/listingslab/clg6th83t001801qtmy1p1rn5",
         // @ts-ignore
         center,
         zoom: zoom,
@@ -47,7 +47,7 @@ export default function Mapbox() {
   }, [dispatch, map, dwm, onMapLoad])
 
   return (
-        <Card
+        <Box
           id={id}
           sx={{ height: 400}}
           ref={container}

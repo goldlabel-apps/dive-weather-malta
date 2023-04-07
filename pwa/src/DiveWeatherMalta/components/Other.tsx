@@ -2,6 +2,11 @@ import React from "react"
 import {
     IconButton,
     CardHeader,
+    List,
+    ListItemButton,
+    ListItemAvatar,
+    ListItemText,
+    Avatar,
 } from "@mui/material"
 import {
     useDWMSelect,
@@ -15,16 +20,37 @@ export default function Other(props: any) {
     const {forecast} = dwm
     if (!forecast) return null
     return <>
-            <CardHeader 
-                title={<Font color="white">
-                        Other
+        <List>
+            <ListItemButton
+                onClick={(e: React.MouseEvent) => {
+                    e.preventDefault()
+                    console.log("Other")
+                }}>
+                <ListItemText 
+                    primary={<Font color="white">
+                        The Um El Faroud
                     </Font>}
-                subheader={<></>}
-                action={<>
-                <IconButton color="inherit">
-                        <Icon icon="fullscreen" />
-                    </IconButton>
-                </>}
-            />
+                />
+                <ListItemAvatar>
+                    <Icon icon="right" />
+                </ListItemAvatar>
+            </ListItemButton>
+
+            <ListItemButton
+                onClick={(e: React.MouseEvent) => {
+                    e.preventDefault()
+                    console.log("Other")
+                }}>
+                <ListItemText 
+                    primary={<Font color="white">
+                        The Rozi
+                    </Font>}
+                />
+                <ListItemAvatar>
+                    <Icon icon="right" />
+                </ListItemAvatar>
+            </ListItemButton>
+
+        </List>
     </>;
 };
