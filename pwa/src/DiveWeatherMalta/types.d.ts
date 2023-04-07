@@ -2,6 +2,17 @@ import {
     PaletteMode,
 } from "@mui/material";
 
+export type ReduxShape = {
+    locale: any
+    started: boolean
+    forecast?: any
+    loading?: boolean
+    theme: ThemeShape
+    description: string
+    blink?: boolean
+    hourIndex?: number
+}
+
 export type FontShape = {
     wind?: string
     variant?: string
@@ -14,15 +25,6 @@ export type FontShape = {
 
 export type HourShape = {
     wind?: string
-}
-
-export type ReduxShape = {
-    started: boolean
-    forecast?: any
-    loading?: boolean
-    theme: ThemeShape
-    description: string
-    blink?: boolean
 }
 
 export type ThemeShape = {

@@ -21,9 +21,9 @@ export default function Temperature(props: any) {
                         </Font>}
                 subheader={<></>}
                 action={<>
-                    <IconButton color="inherit">
+                    {/* <IconButton color="inherit">
                         <Icon icon="fullscreen" />
-                    </IconButton>
+                    </IconButton> */}
                     </>}
             />
     </>;
