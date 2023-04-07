@@ -34,53 +34,33 @@ export default function Weather(props: any) {
     const rightNow = moment().format("ha, dddd Do MMMM")
     return <>
             <Container maxWidth="lg" sx={{mt:1}}>
-                <CardHeader 
-                    avatar={<IconButton
-                                onClick={(e: React.MouseEvent) => {
-                                    window.open("/", "_self")
-                                }}>
-                                    <Avatar src="/logo512.png" alt={description} />
-                                </IconButton>}
-                    title={<Hidden smDown>
-                            <Font variant="title" color="white">
+                <CardHeader
+                    title={<Font variant="bold" color="white">
+                            {rightNow}
+                        </Font>}
+                    subheader={<Font color="white">
                                 Dive Weather Forecast Malta
-                            </Font></Hidden>}
-                    subheader={<Hidden smDown>
-                                <Font color="white">
-                                    {rightNow}
-                                </Font>
-                            </Hidden>
-                    }
+                            </Font>}
+                    
                     action={<Share />}
                 />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={6}>
-                            <Grid container>
+                        <Grid item xs={12} md={7}>
+                            <Mapbox />
+                        </Grid>
+                        <Grid item xs={12} md={5}>
+                            <Grid container spacing={1}>
                                 <Grid item xs={12} md={6}>
                                     <Wind hour={hour}/>
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <Temperature hour={hour}/>
                                 </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Visibility hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Rain hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Humidity hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Swell hour={hour}/>
-                                </Grid>
+                                
                             </Grid>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Mapbox />
-                            <Other />
-                        </Grid>
+                        
                     </Grid>
                 </CardContent>
         </Container>

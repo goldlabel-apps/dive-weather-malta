@@ -1,5 +1,18 @@
 
 export const locale = {
+
+    temperature: {
+        airTemperature: {
+            label: "Air Temperature",
+            description: "Air temperature in degrees celsius",
+            suffix: "°C",
+        },
+        waterTemperature: {
+            label: "Water Temperature",
+            description: "Water temperature in degrees celsius",
+            suffix: "°C",
+        },
+    },
     wind: {
         windSpeed: {
             label: "Wind Speed",
