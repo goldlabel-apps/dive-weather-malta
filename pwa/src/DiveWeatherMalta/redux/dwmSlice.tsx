@@ -1,20 +1,23 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {RootState} from "./dwmStore";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
+import {RootState} from "./dwmStore"
+import {locale} from "./locale"
 import {
   KeyValueShape,
   ReduxShape,
-} from "../types";
+} from "../types"
 
 const initialState: ReduxShape = {
+  description: "An easy to use PWA displaying a 5 Day Marine weather forecast for Diving in Malta",
   started: false,
+  locale,
   loading: false,
   forecast: null,
+  hourIndex: 0,
   theme: {
     mode: "light",
     primary: "#265874",
     secondary: "#489FD8",
   },
-  description: "An easy to use app displaying a 5 Day Marine weather forecast for Malta",
 }
 
 export const dwmSlice = createSlice({
@@ -22,13 +25,13 @@ export const dwmSlice = createSlice({
   initialState,
   reducers: {
     setDWMKey: (state, action: PayloadAction<KeyValueShape>) => {
-      const { key, value } = action.payload;
+      const { key, value } = action.payload
       // @ts-ignore
-      state[key] = value;
+      state[key] = value
     },
   },
 })
 
-export const selectDWM = (state: RootState) => state.dwm;
-export const { setDWMKey } = dwmSlice.actions; 
-export default dwmSlice.reducer;
+export const selectDWM = (state: RootState) => state.dwm
+export const { setDWMKey } = dwmSlice.actions 
+export default dwmSlice.reducer
