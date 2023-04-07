@@ -39,28 +39,33 @@ export default function Wind(props: any) {
 
     return <>
                 
-            <Font variant="giant" color="white">
-                {Math.floor(windSpeed.value)}{windSpeed.suffix}
-            </Font>
+            
             <Font variant="small">
                 {windSpeed.description}
             </Font>
-            <Box sx={{height: 24}}/>
-            
+            <Box sx={{my: 1}}/>
             <Font variant="giant" color="white">
-                {Math.floor(gust.value)}{gust.suffix}
+                {Math.floor(windSpeed.value)}{windSpeed.suffix}
             </Font>
+            <Box sx={{my: 2}}/>
+            
+            
             <Font variant="small">
                 {gust.description}
             </Font>
-            <Box sx={{height: 24}}/>
-
-
+            <Box sx={{my: 1}}/>
             <Font variant="giant" color="white">
-                {speed.value}{speed.suffix}
+                {Math.floor(gust.value)}{gust.suffix}
             </Font>
+            <Box sx={{my: 2}}/>
+
+            
             <Font variant="small">
                 {speed.description}
+            </Font>
+            <Box sx={{my: 1}}/>
+            <Font variant="giant" color="white">
+                {speed.value}{speed.suffix}
             </Font>
 
     </>

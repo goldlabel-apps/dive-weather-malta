@@ -46,32 +46,21 @@ export default function Weather(props: any) {
                 />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={6}>
-                            <Grid container>
+                        <Grid item xs={12} md={7}>
+                            <Mapbox />
+                        </Grid>
+                        <Grid item xs={12} md={5}>
+                            <Grid container spacing={1}>
                                 <Grid item xs={12} md={6}>
                                     <Wind hour={hour}/>
                                 </Grid>
                                 <Grid item xs={12} md={6}>
                                     <Temperature hour={hour}/>
                                 </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Visibility hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Rain hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Humidity hour={hour} />
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <Swell hour={hour}/>
-                                </Grid>
+                                
                             </Grid>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Mapbox />
-                            <Other />
-                        </Grid>
+                        
                     </Grid>
                 </CardContent>
         </Container>

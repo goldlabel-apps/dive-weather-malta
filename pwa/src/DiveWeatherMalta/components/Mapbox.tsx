@@ -36,7 +36,7 @@ export default function Mapbox() {
       map.current = new mapboxgl.Map({
         // @ts-ignore
         container: container.current,
-        style: "mapbox://styles/listingslab/clg6th83t001801qtmy1p1rn5",
+        style: "mapbox://styles/listingslab/clg6zqkla000201mw7e55yp0x",
         // @ts-ignore
         center,
         zoom: zoom,

@@ -7,7 +7,6 @@ import {
     selectDWM,
 } from "../../"
 import {Font} from "../Font"
-import {Icon} from "../../../@listingslab";
 
 export default function Temperature(props: any) {
     const dwm = useDWMSelect(selectDWM)
@@ -30,18 +29,23 @@ export default function Temperature(props: any) {
     }
 
     return <>
-        <Font variant="giant" color="white">
-            {Math.floor(air.value)}{air.suffix}
-        </Font>
+        
         <Font variant="small">
             {air.description}
         </Font>
-        <Box sx={{height: 24}}/>
+        <Box sx={{my: 1}}/>
         <Font variant="giant" color="white">
-            {Math.floor(water.value)}{water.suffix}
+            {Math.floor(air.value)}{air.suffix}
         </Font>
+        <Box sx={{my: 2}}/>
+
+        
         <Font variant="small">
             {water.description}
+        </Font>
+        <Box sx={{my: 1}}/>
+        <Font variant="giant" color="white">
+            {Math.floor(water.value)}{water.suffix}
         </Font>
     </>;
 };
