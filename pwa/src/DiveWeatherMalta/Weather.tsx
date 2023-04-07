@@ -34,23 +34,14 @@ export default function Weather(props: any) {
     const rightNow = moment().format("ha, dddd Do MMMM")
     return <>
             <Container maxWidth="lg" sx={{mt:1}}>
-                <CardHeader 
-                    avatar={<IconButton
-                                onClick={(e: React.MouseEvent) => {
-                                    window.open("/", "_self")
-                                }}>
-                                    <Avatar src="/logo512.png" alt={description} />
-                                </IconButton>}
-                    title={<Hidden smDown>
-                            <Font variant="title" color="white">
+                <CardHeader
+                    title={<Font variant="bold" color="white">
+                            {rightNow}
+                        </Font>}
+                    subheader={<Font color="white">
                                 Dive Weather Forecast Malta
-                            </Font></Hidden>}
-                    subheader={<Hidden smDown>
-                                <Font color="white">
-                                    {rightNow}
-                                </Font>
-                            </Hidden>
-                    }
+                            </Font>}
+                    
                     action={<Share />}
                 />
                 <CardContent>
