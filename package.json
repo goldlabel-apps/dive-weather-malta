@@ -1,6 +1,6 @@
 {
   "name": "dive-weather-malta",
-  "description": "Stormglass.io is a web service which provides detailed marine weather information for Malta. We want to display that information in a single view so that a user can easily interpret and make use of it",
+  "description": "An easy to use app displaying a 5 Day Marine weather forecast for Malta",
   "scripts": {
     "start": "cd ./pwa && npm start"
   }

@@ -29,16 +29,7 @@ import Mapbox from "./components/Mapbox"
 
 export default function Weather(props: any) {
     const dwm = useDWMSelect(selectDWM)
-    const {forecast, loading, description} = dwm
-    // let meta:any = null
-    let lat:number | null = null
-    let lng:number | null = null
-    
-    if(forecast){
-        // meta = forecast.data.meta  
-        lat = forecast.data.meta.lat
-        lng = forecast.data.meta.lng
-    }
+    const {loading, description} = dwm
     return <>
         <Container maxWidth="lg" sx={{mt:1}}>
             <Card sx={{}}>
@@ -67,32 +58,40 @@ export default function Weather(props: any) {
                 />
                 <CardContent>
                     <Grid container spacing={1}>
-                        {forecast ? <Grid item xs={12}>
-                            <Mapbox />
-                        </Grid> : null }
-                        
-                        <Grid item xs={12} md={4}><Wind /></Grid>
-                        <Grid item xs={12} md={4}><Temperature /></Grid>
-                        <Grid item xs={12} md={4}><Visibility /></Grid>
-                        <Grid item xs={12} md={4}><Rain /></Grid>
-                        <Grid item xs={12} md={4}><Humidity /></Grid>
-                        <Grid item xs={12} md={4}><Swell /></Grid>
+                        <Grid item xs={12} md={8}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}><Mapbox /></Grid>
+                            <Grid item xs={12} md={4}><Wind /></Grid>
+                            <Grid item xs={12} md={4}><Temperature /></Grid>
+                            <Grid item xs={12} md={4}><Visibility /></Grid>
+                            <Grid item xs={12} md={4}><Rain /></Grid>
+                            <Grid item xs={12} md={4}><Humidity /></Grid>
+                            <Grid item xs={12} md={4}><Swell /></Grid>
+                        </Grid>
+                        </Grid>
+                        <Grid item xs={12} md={4}>
+                            other stuff
+                        </Grid>
                     </Grid>
-
-
                 </CardContent>
+
                 <CardActions>
-                    <Button
-                        variant="outlined"
-                        onClick={(e: React.MouseEvent) => {
-                            console.log("internal route")
-                        }}
-                    >
-                        <span style={{marginLeft:8, marginRight:8}}>
-                            Call To Action
-                        </span>
-                        <Icon icon="right" />
-                    </Button>
+                    <Box sx={{display:"flex"}}>
+                        <Box sx={{flexGrow:1}} />
+                        <Box>
+                            <Button
+                                variant="contained"
+                                onClick={(e: React.MouseEvent) => {
+                                    console.log("internal route")
+                                }}
+                            >
+                                <span style={{marginLeft:8, marginRight:8}}>
+                                    CTA
+                                </span>
+                                <Icon icon="right" />
+                            </Button>
+                        </Box>
+                    </Box>
                 </CardActions>
             </Card>
         </Container>
