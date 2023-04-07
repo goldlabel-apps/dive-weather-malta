@@ -7,14 +7,14 @@ import {
 
 const initialState: ReduxShape = {
   started: false,
+  loading: false,
+  forecast: null,
   theme: {
     mode: "light",
     primary: "#265874",
     secondary: "#489FD8",
   },
   description: "An easy to use app displaying a 5 Day Marine weather forecast for Malta",
-  loading: false,
-  forecast: null,
 }
 
 export const dwmSlice = createSlice({

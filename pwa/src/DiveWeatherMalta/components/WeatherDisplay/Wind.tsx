@@ -8,6 +8,7 @@ import {
     useDWMSelect,
     selectDWM,
 } from "../../"
+import {Font} from "../Font"
 // import {Icon} from "../../../@listingslab"
 
 export default function Wind(props: any) {
@@ -17,9 +18,9 @@ export default function Wind(props: any) {
     return <>
         <Card sx={{border: "1px solid white"}}>
             <CardHeader 
-                title={<Typography variant="button">
+                title={<Font>
                         Wind
-                        </Typography>}
+                        </Font>}
                 subheader={<></>}
                 action={<></>}
             />

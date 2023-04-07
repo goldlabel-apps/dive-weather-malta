@@ -6,11 +6,11 @@ import {
 import {
     useDWMSelect,
     selectDWM,
-} from "../../"
-import {Font} from "../Font"
-// import {Icon} from "../../../@listingslab"
+} from "../"
+import {Font} from "./Font"
+// import {Icon} from "../../../@listingslab";
 
-export default function Rain(props: any) {
+export default function Other(props: any) {
     const dwm = useDWMSelect(selectDWM)
     const {forecast} = dwm
     if (!forecast) return null
@@ -18,11 +18,11 @@ export default function Rain(props: any) {
         <Card sx={{}}>
             <CardHeader 
                 title={<Font>
-                        Rain
-                        </Font>}
+                        Other
+                    </Font>}
                 subheader={<></>}
                 action={<></>}
             />
         </Card>
-    </>
-}
+    </>;
+};

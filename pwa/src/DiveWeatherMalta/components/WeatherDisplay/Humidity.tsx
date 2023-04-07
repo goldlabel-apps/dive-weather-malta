@@ -2,13 +2,12 @@ import React from "react"
 import {
     Card,
     CardHeader,
-    // IconButton,
-    Typography,
 } from "@mui/material"
 import {
     useDWMSelect,
     selectDWM,
 } from "../../"
+import {Font} from "../Font"
 // import {Icon} from "../../../@listingslab";
 
 export default function Humidity(props: any) {
@@ -18,9 +17,9 @@ export default function Humidity(props: any) {
     return <>
         <Card sx={{}}>
             <CardHeader 
-                title={<Typography variant="button">
+                title={<Font>
                         Humidity
-                    </Typography>}
+                    </Font>}
                 subheader={<></>}
                 action={<></>}
             />
