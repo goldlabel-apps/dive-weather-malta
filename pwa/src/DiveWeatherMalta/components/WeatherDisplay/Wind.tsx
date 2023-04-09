@@ -59,7 +59,6 @@ export default function Wind(props: any) {
             </Font>
             <Box sx={{my: 2}}/>
 
-            
             <Font variant="small">
                 {speed.description}
             </Font>
