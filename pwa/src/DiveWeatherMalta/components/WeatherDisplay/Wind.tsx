@@ -1,35 +1,27 @@
 import React from "react"
 import {
-    Box,
-} from "@mui/material"
-import {
     useDWMSelect,
     selectDWM,
 } from "../../"
-import {Font} from "../Font"
-// import {Icon} from "../../../@listingslab"
+import DataField from "../DataField"
 
 export default function Wind(props: any) {
     const dwm = useDWMSelect(selectDWM)
     const {locale} = dwm
     const {wind} = locale
     const {hour} = props
-    // console.log("hour", hour.windSpeed[0].value)
-    // const {windDirection, gust, windSpeed} = wind
-    let speed = {
+    let direction = {
         value: hour.windDirection[0].value,
         label: wind.windDirection.label,
         description: wind.windDirection.description,
         suffix: wind.windDirection.suffix
     }
-
     let gust = {
         value: hour.gust[0].value,
         label: wind.gust.label,
         description: wind.gust.description,
         suffix: wind.gust.suffix
     }
-
     let windSpeed = {
         value: hour.windSpeed[0].value,
         label: wind.windSpeed.label,
@@ -38,41 +30,17 @@ export default function Wind(props: any) {
     }
 
     return <>
-                
-            
-            <Font variant="small">
-                {windSpeed.description}
-            </Font>
-            <Box sx={{my: 1}}/>
-            <Font variant="giant" color="white">
-                {Math.floor(windSpeed.value)}{windSpeed.suffix}
-            </Font>
-            <Box sx={{my: 2}}/>
-            
-            
-            <Font variant="small">
-                {gust.description}
-            </Font>
-            <Box sx={{my: 1}}/>
-            <Font variant="giant" color="white">
-                {Math.floor(gust.value)}{gust.suffix}
-            </Font>
-            <Box sx={{my: 2}}/>
-
-            
-            <Font variant="small">
-                {speed.description}
-            </Font>
-            <Box sx={{my: 1}}/>
-            <Font variant="giant" color="white">
-                {speed.value}{speed.suffix}
-            </Font>
-
+        <DataField 
+            title={`Wind direction ${Math.floor(direction.value)}${direction.suffix}`}
+            tooltip={direction.description}
+        />  
+        <DataField 
+            title={`Wind Speed ${Math.floor(windSpeed.value)}${windSpeed.suffix}`}
+            tooltip={windSpeed.description}
+        />           
+        <DataField 
+            title={`Gusting to ${Math.floor(gust.value)}${gust.suffix}`}
+            tooltip={gust.description}
+        /> 
     </>
 }
-
-/* 
-            <pre>windDirection{JSON.stringify(wind, null, 2)}</pre>
-            <pre>gust{JSON.stringify(gust, null, 2)}</pre>
-            <pre>windSpeed{JSON.stringify(windSpeed, null, 2)}</pre> 
-*/

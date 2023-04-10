@@ -2,6 +2,11 @@ import {
     PaletteMode,
 } from "@mui/material";
 
+export type DataFieldShape = {
+    title: string
+    tooltip: string
+}
+
 export type ReduxShape = {
     locale: any
     started: boolean
