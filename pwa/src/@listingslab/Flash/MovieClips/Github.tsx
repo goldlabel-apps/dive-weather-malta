@@ -1,7 +1,7 @@
 import React from "react";
-const Github = props => {
+const Github = (props: any) => {
     const { color } = props;
-    let c = `#ffffff`;
+    let c: any = `#ffffff`;
     if (color) {
         c = color;
     }

@@ -1,5 +1,5 @@
 import React from "react";
-const YouIcon = props => {
+const YouIcon = (props: any) => {
     const { color } = props;
     let c = `#ffffff`;
     if (color) {
