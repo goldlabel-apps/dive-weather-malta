@@ -1,6 +1,15 @@
 
 export const locale = {
-
+    rain: {
+        label: "Rain",
+        description: "Mean precipitation in kg/m²/h = mm/h",
+        suffix: "mm/h",
+    },
+    humidity: {
+        label: "Humidity",
+        description: "Relative humidity in percent",
+        suffix: "%",
+    },
     temperature: {
         airTemperature: {
             label: "Air Temperature",
