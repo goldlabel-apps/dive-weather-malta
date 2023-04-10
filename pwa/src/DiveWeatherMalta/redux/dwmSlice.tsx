@@ -14,7 +14,7 @@ const initialState: ReduxShape = {
   forecast: null,
   hourIndex: 0,
   theme: {
-    mode: "light",
+    mode: "dark",
     primary: "#265874",
     secondary: "#489FD8",
   },

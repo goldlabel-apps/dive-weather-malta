@@ -21,10 +21,14 @@ export const makeTheme = (
   palette: {
       mode,
       primary: {
-          main: mode === "light" ? primary : secondary,
+        main: mode === "light" ? primary : secondary,
       },
       secondary: {
-          main: mode === "light" ? secondary : primary,
+        main: mode === "light" ? secondary : primary,
+      },
+      background: {
+        default: "light" ? secondary : primary,
+        paper: "light" ? secondary : primary,
       },
   },
 });

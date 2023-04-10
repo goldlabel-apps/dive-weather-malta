@@ -1,6 +1,9 @@
 import React from "react"
 import moment from "moment"
 import {
+    Accordion,
+    AccordionSummary,
+    AccordionDetails,
     Card,
     CardHeader,
     CardContent,
@@ -9,6 +12,8 @@ import {
     Grid,
 } from "@mui/material"
 import {Font} from "./components/Font"
+import {Icon} from "../@listingslab";
+
 import {
     useDWMSelect,
     selectDWM,
@@ -90,69 +95,55 @@ export default function Weather(props: any) {
         suffix: locale.swell.swellDirection.suffix
     }
 
-    return <>
-            <Container maxWidth="lg" sx={{mt:1}}>
-                <CardHeader
-                    title={<Font variant="giant" color="white">
-                            Diving Weather Forecast Malta
-                        </Font>}
+    return <>    
+        <Accordion>
+            <AccordionSummary expandIcon={<Icon icon="expand" />}>
+                <Font variant="title">{rightNow}</Font>
+            </AccordionSummary>
+        <AccordionDetails>
+            <List dense>
+                <DataField 
+                    title={`${Math.floor(direction.value)}${direction.suffix}`}
+                    tooltip={direction.description}
+                />  
+                <DataField 
+                    title={`${Math.floor(windSpeed.value)}${windSpeed.suffix}`}
+                    tooltip={windSpeed.description}
+                />           
+                <DataField 
+                    title={`${Math.floor(gust.value)}${gust.suffix}`}
+                    tooltip={gust.description}
+                /> 
+                <DataField 
+                    title={`${Math.floor(air.value)}${air.suffix}`}
+                    tooltip={air.description}
                 />
-                <CardContent>
-                    <Grid container>
-                        <Grid item xs={12} md={12}>
-                            <Card>
-                                <CardHeader
-                                    title={<Font>{rightNow}</Font>}
-                                />
-                                <CardContent>
-                                    <List dense>
-
-                                        <DataField 
-                                            title={`${Math.floor(direction.value)}${direction.suffix}`}
-                                            tooltip={direction.description}
-                                        />  
-                                        <DataField 
-                                            title={`${Math.floor(windSpeed.value)}${windSpeed.suffix}`}
-                                            tooltip={windSpeed.description}
-                                        />           
-                                        <DataField 
-                                            title={`${Math.floor(gust.value)}${gust.suffix}`}
-                                            tooltip={gust.description}
-                                        /> 
-                                        <DataField 
-                                            title={`${Math.floor(air.value)}${air.suffix}`}
-                                            tooltip={air.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(water.value)}${water.suffix}`}
-                                            tooltip={water.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(visibilityData.value)}${visibilityData.suffix}`}
-                                            tooltip={visibilityData.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(rainData.value)}${rainData.suffix}`}
-                                            tooltip={rainData.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(humidityData.value)}${humidityData.suffix}`}
-                                            tooltip={humidityData.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(swellHeightData.value)}${swellHeightData.suffix}`}
-                                            tooltip={swellHeightData.description}
-                                        />
-                                        <DataField 
-                                            title={`${Math.floor(swellDirectionData.value)}${swellDirectionData.suffix}`}
-                                            tooltip={swellDirectionData.description}
-                                        />
-                                    </List>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Container>
-        </>
+                <DataField 
+                    title={`${Math.floor(water.value)}${water.suffix}`}
+                    tooltip={water.description}
+                />
+                <DataField 
+                    title={`${Math.floor(visibilityData.value)}${visibilityData.suffix}`}
+                    tooltip={visibilityData.description}
+                />
+                <DataField 
+                    title={`${Math.floor(rainData.value)}${rainData.suffix}`}
+                    tooltip={rainData.description}
+                />
+                <DataField 
+                    title={`${Math.floor(humidityData.value)}${humidityData.suffix}`}
+                    tooltip={humidityData.description}
+                />
+                <DataField 
+                    title={`${Math.floor(swellHeightData.value)}${swellHeightData.suffix}`}
+                    tooltip={swellHeightData.description}
+                />
+                <DataField 
+                    title={`${Math.floor(swellDirectionData.value)}${swellDirectionData.suffix}`}
+                    tooltip={swellDirectionData.description}
+                />
+            </List>
+        </AccordionDetails>
+      </Accordion>
+    </>
 }

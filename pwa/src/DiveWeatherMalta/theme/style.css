@@ -9,13 +9,13 @@ body {
   /* color: white; */
   /* background: #265874; */
   /* background: linear-gradient(0deg, #265874 0%,#489FD8 100%);       */
-  background: linear-gradient(0deg, #489FD8 0%,#489FD8 100%); 
+  background: linear-gradient(0deg, #265874 0%,#265874 100%); 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 html {
   --scrollbarBG: none;
-  --thumbBG: #265874;
+  --thumbBG: #489FD8;
 }
 body::-webkit-scrollbar {
   width: 8px;
