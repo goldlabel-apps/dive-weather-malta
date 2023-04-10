@@ -1,21 +1,25 @@
 import {DataFieldShape} from "../types"
 import React from "react"
 import {
-    Box,
-    Tooltip,
-    IconButton,
+    ListItem,
+    ListItemText,
 } from "@mui/material"
-// import {
-//     useDWMSelect,
-//     selectDWM,
-// } from "../"
 import {Font} from "./Font"
-import {Icon} from "../../@listingslab";
 
 export default function DataField(props: DataFieldShape) {
     const {title, tooltip} = props
     return <>
-        <Box sx={{display: "flex"}}>
+        <ListItem>
+            <ListItemText 
+                primary={<Font variant="bold">{title}</Font>}
+                secondary={<Font>{tooltip}</Font>}
+            />
+        </ListItem>
+    </>;
+};
+
+/*
+<Box sx={{display: "flex"}}>
             <Tooltip title={<Font color="white" variant="small">
                                 {tooltip}
                             </Font>}>
@@ -23,9 +27,8 @@ export default function DataField(props: DataFieldShape) {
                     <Icon icon="help" />
                 </IconButton>
             </Tooltip>
-            <Font variant="giant" color="white">
+            <Font>
                 {title}
             </Font>
         </Box>
-    </>;
-};
+*/

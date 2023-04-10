@@ -1,5 +1,22 @@
 
 export const locale = {
+    visibility:{
+        label: "Visibility",
+        description: "Horizontal visibility in km",
+        suffix: "km",
+    },
+    swell: {
+        swellHeight: {
+            label: "Swell Height",
+            description: "Height of swell waves in meters",
+            suffix: "m",
+        },
+        swellDirection: {
+            label: "Swell Direction",
+            description: "Direction of swell waves. 0° indicates swell coming from north",
+            suffix: "°",
+        },
+    },
     rain: {
         label: "Rain",
         description: "Mean precipitation in kg/m²/h = mm/h",
