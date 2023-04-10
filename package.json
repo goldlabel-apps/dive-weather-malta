@@ -1,6 +1,6 @@
 {
   "name": "dive-weather-malta",
-  "description": "An easy to use app displaying a 5 Day Marine weather forecast for Malta",
+  "description": "An easy to use app displaying a 5 Day diving weather forecast for Malta",
   "scripts": {
     "start": "cd ./pwa && npm start"
   }
