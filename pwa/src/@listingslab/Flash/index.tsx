@@ -5,9 +5,9 @@ import Macromedia from "./MovieClips/Macromedia"
 import FlickrIcon from "./MovieClips/FlickrIcon"
 import InstagramIcon from "./MovieClips/InstagramIcon"
 import YouIcon from "./MovieClips/YouIcon"
-
-import {getElement} from "./ActionScript/getElement"
 import {moveTo} from "./ActionScript/moveTo"
+import {getElement} from "./ActionScript/getElement"
+import {getElementSize} from "./ActionScript/getElementSize"
 
 export {
     Flash,
@@ -19,4 +19,5 @@ export {
     YouIcon,
     moveTo,
     getElement,
+    getElementSize,
 }
