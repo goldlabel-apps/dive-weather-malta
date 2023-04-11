@@ -1,13 +1,11 @@
-import React from "react";
-// import {config} from "./config"
-// import {ThemeShape} from "./types"
+import React from "react"
 import {
   PaletteMode,
   ThemeProvider,
   CssBaseline,
   createTheme,
   Box,
-} from "@mui/material";
+} from "@mui/material"
 import {useDWMSelect} from "./hooks/useDWMSelect"
 import {useDWMDispatch} from "./hooks/useDWMDispatch"
 import {selectDWM} from "./redux/dwmSlice"
@@ -31,7 +29,7 @@ export const makeTheme = (
         paper: "light" ? secondary : primary,
       },
   },
-});
+})
 
 export function Setup(props: any) {
   const {children} = props
@@ -44,22 +42,23 @@ export function Setup(props: any) {
       // @ts-ignore
       createTheme(makeTheme(mode, primary, secondary)),
     [mode, primary, secondary],
-  );
+  )
 
   React.useEffect(() => {
     const {started} = dwm
     if(!started) dispatch(start())
-  }, [dispatch, dwm]);
+  }, [dispatch, dwm])
 
   return (
     <ThemeProvider theme={t}>
       <CssBaseline />
       <Box sx={{position: "relative" }}>
+        
         {children}
       </Box>
     </ThemeProvider>
   )
-};
+}
 
 /*
   <pre>debug {JSON.stringify(dwm, null, 2)}</pre>

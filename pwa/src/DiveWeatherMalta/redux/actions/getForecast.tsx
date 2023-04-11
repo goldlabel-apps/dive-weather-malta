@@ -10,7 +10,8 @@ export const getForecast = (): AppThunk => async (dispatch: any) => {
     const {loading} = dwmStore.getState().dwm
     if(loading) return false
     dispatch(setDWMKey({ key: 'loading', value: true}))
-    axios.get('https://api.listingslab.com/weather')
+    axios.get('/json/weather.json')
+    // axios.get('https://api.listingslab.com/weather')
       .then(function (response) {
         dispatch(setDWMKey({ key: 'loading', value: false}))
         dispatch(setDWMKey({ key: 'forecast', value: response.data.response}))
